@@ -1,0 +1,12 @@
+{
+  "name": "PC Health",
+  "version": "1.0.0",
+  "manifest_version": 1,
+  "action": {
+    "title": "PC Health",
+    "icon": "/heart.svg",
+    "popover": "/",
+    "height": 730,
+    "width": 180
+  }
+}

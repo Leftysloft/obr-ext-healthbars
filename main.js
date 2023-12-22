@@ -11,34 +11,35 @@ import { isImage } from "@owlbear-rodeo/sdk";
 document.querySelector("#app").innerHTML = `
 
   <div>
-    <h3> Health </h3>
+    <h3> Raine </h3>
     <ul id="sheet-list"></ul>
 
-    <p><iframe
+    <p><embed
     width="125px"
-    height="145px"
+    height="125px"
     src="http://127.0.0.1:5000/portrait?name=raine&id=108291017">
-    </iframe>
+    </embed>
 
-    <p><iframe
+    <h3> Rosy </h3>
+    <p><embed
     width="125px"
-    height="145px"
+    height="125px"
     src="http://127.0.0.1:5000/portrait?name=rosemary&id=97082692">
-    </iframe>
+    </embed>
 
-  
-    <p><iframe
+    <h3> Ryx </h3>
+    <p><embed
     width="125px"
-    height="145px"
+    height="125px"
     src="http://127.0.0.1:5000/portrait?name=ryx&id=95195277">
-    </iframe>
+    </embed>
 
-
-    <p><iframe
+    <h3> Tobi </h3>
+    <p><embed
     width="125px"
-    height="145px"
+    height="125px"
     src="http://127.0.0.1:5000/portrait?name=tobi&id=110222058">
-    </iframe>
+    </embed>
 
   </div>
 `;

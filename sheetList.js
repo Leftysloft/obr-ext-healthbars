@@ -7,13 +7,11 @@ import { isImage } from "@owlbear-rodeo/sdk";
 //   (item) => item.layer === "CHARACTER" && isImage(item)
 // );
 
-
 export async function setupSheetList(element) {
   const renderList = async (items) => {
     
     // Get the url of any item with
     // our gsheet metadata
-
 
     const sheetItems = [];
     
@@ -44,7 +42,7 @@ export async function setupSheetList(element) {
 
       // console.log('role-vis:'+playerRole+"-"+urlItem.visible);
       if(playerRole == "GM" || urlItem.visible) {
-        const node = document.createElement("li");
+        const node = document.createElement("ul");
         node.innerText = `${urlItem.name}`;
         if(playerRole == "GM") {
           
@@ -62,24 +60,13 @@ export async function setupSheetList(element) {
            node.appendChild(enode);
 
           //  //  Display a character in an iframe (works?)
-          //  //
-          //  //
-          //  const fnode = document.createElement("iframe");
-          //   fnode.setAttribute("width", 200);
-          //   fnode.setAttribute("height", 150);
-          //   fnode.setAttribute("src", "http://127.0.0.1:5000/portrait?name=rhose&id=57582811");
-          //   fnode.addEventListener("click", function() {
-          //     const url1 = window.prompt("Enter the sheet url", urlItem.url1);
-          //     if(url) {
-          //       editSheetFunction(`${urlItem.id}`, url1);
-          //     }
-          //   });
-          //   node.appendChild(fnode);
-          // //
-          // //
+            //          const fnode = document.createElement("embed");
+            // fnode.setAttribute("width", 125);
+            // fnode.setAttribute("height", 125);
+            // fnode.setAttribute("src", "http://127.0.0.1:5000/portrait?name=rhose&id=57582811");
+
+            // node.appendChild(fnode);
           // // Stop trying (works?)
-
-
 
            // Creates checkbox for player visibility
           const cnode = document.createElement("input");
@@ -106,26 +93,10 @@ export async function setupSheetList(element) {
         nodes.push(node);
       }
     }
-
     element.replaceChildren(...nodes);
-
-  
   };
   OBR.scene.items.onChange(renderList);
-  
 }
-
-   /* document.querySelector("#app").innerHTML = `
-
-    <div>
-    <p><iframe
-    width="125px"
-    src="http://127.0.0.1:5000/portrait?name=rhose&id=57582811">
-    </iframe>
-    </div>
-    `;
-    */
-
 
 // Set link (circle right) visible to players
 export async function visibileFunction(uuid) {

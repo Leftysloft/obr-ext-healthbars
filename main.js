@@ -11,8 +11,8 @@ import { isImage } from "@owlbear-rodeo/sdk";
 document.querySelector("#app").innerHTML = `
 
   <div>
-    <h3> Raine </h3>
     <ul id="sheet-list"></ul>
+    <h3> Raine </h3>
 
     <p><embed
     width="125px"

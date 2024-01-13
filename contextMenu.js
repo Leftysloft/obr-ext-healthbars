@@ -34,9 +34,12 @@ export async function setupContextMenu() {
       );
       //console.log(context.items);  //LOG GETS TOKEN DATA WHEN ADDED/REMOVED
       if (addToURLS) {
+        const character_id = window.prompt("Enter the character id from DnDBeyond");
         OBR.scene.items.updateItems(context.items, (items) => {
+          // console.log(character_id);
           for (let item of items) {
             item.metadata[`${ID}/metadata`] = {
+              "character_id": character_id,
               "url": "",
               "visible": false,
             };

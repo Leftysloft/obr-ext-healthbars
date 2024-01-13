@@ -1,6 +1,6 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 0;
+  line-height: 1;
   font-weight: 100;
 
   color-scheme: light dark;
@@ -24,10 +24,11 @@ a:hover {
 }
 
 body {
-  margin: 0;
+  margin: 100;
   display: flex;
-  place-items: center;
-
+  place-items: left;
+  flex-direction: row-reverse;
+  
 }
 
 h1 {
@@ -38,8 +39,9 @@ h1 {
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1px;
   text-align: center;
+  padding-inline-start: 0px;
 }
 
 .logo {

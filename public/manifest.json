@@ -1,5 +1,5 @@
 {
-  "name": "PC Health (local)",
+  "name": "PC Health (remote)",
   "version": "1.0.0",
   "manifest_version": 1,
   "action": {

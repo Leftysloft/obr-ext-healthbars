@@ -20,6 +20,7 @@ export async function setupSheetList(element) {
       if (metadata) {
         sheetItems.push({         
           url: metadata.url,
+          character_id: metadata.character_id,
           name: item.name,
           visible: metadata.visible,
           id: item.id
@@ -63,7 +64,7 @@ export async function setupSheetList(element) {
             const fnode = document.createElement("embed");
             fnode.setAttribute("width", 125);
             fnode.setAttribute("height", 125);
-            fnode.setAttribute("src", "https://lefty469.pythonanywhere.com/portrait?name=raine&id=97082692");
+            fnode.setAttribute("src", "https://lefty469.pythonanywhere.com/portrait?name=raine&id=" + (urlItem.character_id));
 
             node.appendChild(fnode);
           // Stop trying (works?)

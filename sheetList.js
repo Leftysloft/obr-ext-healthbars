@@ -1,7 +1,7 @@
 import OBR from "@owlbear-rodeo/sdk";
 import { ID } from "./constants";
 import "./style.css";
-import { isImage } from "@owlbear-rodeo/sdk";
+//import { isImage } from "@owlbear-rodeo/sdk";
 
 // const characters = await OBR.scene.items.getItems(
 //   (item) => item.layer === "CHARACTER" && isImage(item)
@@ -59,14 +59,14 @@ export async function setupSheetList(element) {
            });
            node.appendChild(enode);
 
-          //  //  Display a character in an iframe (works?)
-            //          const fnode = document.createElement("embed");
-            // fnode.setAttribute("width", 125);
-            // fnode.setAttribute("height", 125);
-            // fnode.setAttribute("src", "http://127.0.0.1:5000/portrait?name=rhose&id=57582811");
+           //  Display a character in an iframe (works?)
+            const fnode = document.createElement("embed");
+            fnode.setAttribute("width", 125);
+            fnode.setAttribute("height", 125);
+            fnode.setAttribute("src", "https://lefty469.pythonanywhere.com/portrait?name=raine&id=97082692");
 
-            // node.appendChild(fnode);
-          // // Stop trying (works?)
+            node.appendChild(fnode);
+          // Stop trying (works?)
 
            // Creates checkbox for player visibility
           const cnode = document.createElement("input");

@@ -1,5 +1,5 @@
 {
-  "name": "PC Health",
+  "name": "PC Health (local)",
   "version": "1.0.0",
   "manifest_version": 1,
   "action": {
@@ -7,6 +7,6 @@
     "icon": "/heart.svg",
     "popover": "/",
     "height": 700,
-    "width": 180
-  }
+    "width": 150
+      }
 }

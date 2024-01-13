@@ -32,6 +32,7 @@ export async function setupContextMenu() {
       const addToURLS = context.items.every(
         (item) => item.metadata[`${ID}/metadata`] === undefined
       );
+      //console.log(context.items);  //LOG GETS TOKEN DATA WHEN ADDED/REMOVED
       if (addToURLS) {
         OBR.scene.items.updateItems(context.items, (items) => {
           for (let item of items) {

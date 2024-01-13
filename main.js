@@ -24,21 +24,21 @@ document.querySelector("#app").innerHTML = `
     <p><embed
     width="125px"
     height="125px"
-    src="lefty469.pythonanywhere.com/portrait?name=rosemary&id=97082692">
+    src="https://lefty469.pythonanywhere.com/portrait?name=rosemary&id=97082692">
     </embed>
 
     <h3> Ryx </h3>
     <p><embed
     width="125px"
     height="125px"
-    src="lefty469.pythonanywhere.com/portrait?name=ryx&id=95195277">
+    src="https://lefty469.pythonanywhere.com/portrait?name=ryx&id=95195277">
     </embed>
 
     <h3> Tobi </h3>
     <p><embed
     width="125px"
     height="125px"
-    src="lefty469.pythonanywhere.com/portrait?name=tobi&id=110222058">
+    src="https://lefty469.pythonanywhere.com/portrait?name=tobi&id=110222058">
     </embed>
 
   </div>

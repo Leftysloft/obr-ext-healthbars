@@ -17,7 +17,7 @@ document.querySelector("#app").innerHTML = `
     <p><embed
     width="125px"
     height="125px"
-    src="lefty469.pythonanywhere.com/portrait?name=raine&id=108291017">
+    src="https://lefty469.pythonanywhere.com/portrait?name=raine&id=108291017">
     </embed>
 
     <h3> Rosy </h3>

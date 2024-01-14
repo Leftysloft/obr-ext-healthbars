@@ -1,20 +1,12 @@
 import OBR from "@owlbear-rodeo/sdk";
 import { ID } from "./constants";
 import "./style.css";
-//import { isImage } from "@owlbear-rodeo/sdk";
-
-
-//TO BE DELETED
-// const characters = await OBR.scene.items.getItems(
-//   (item) => item.layer === "CHARACTER" && isImage(item)
-// );
 
 export async function setupSheetList(element) {
   const renderList = async (items) => {
     
     // Get the url of any item with
     // our gsheet metadata
-
     const sheetItems = [];
     
     for (const item of items) {
@@ -50,7 +42,6 @@ export async function setupSheetList(element) {
         node.innerText = `${urlItem.name}`;
         if(playerRole == "GM") {
           
-
            //  Display a character in an iframe (works?)
           const fnode = document.createElement("embed");
             fnode.setAttribute("width", 75);
@@ -85,7 +76,6 @@ export async function setupSheetList(element) {
           });
           node.appendChild(cnode);
         }
-
         // Creates image for link to url page
         const inode = document.createElement("img");
         inode.setAttribute("src", "fa-circle-right.svg");
@@ -102,7 +92,6 @@ export async function setupSheetList(element) {
   };
   OBR.scene.items.onChange(renderList);
 }
-
 // Set link (circle right) visible to players
 export async function visibileFunction(uuid) {
   const vis = document.getElementById(uuid).checked;

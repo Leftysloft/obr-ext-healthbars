@@ -38,7 +38,7 @@ export async function setupContextMenu() {
       );
       //console.log(context.items);  //LOG GETS TOKEN DATA WHEN ADDED/REMOVED
       if (addToURLS) {
-        const character_id = window.prompt("Enter the character id from DnDBeyond");
+        const character_id = window.prompt("Enter ONLY the character <id> number from DnDBeyond");
         if (character_id >= 0 + !null)
 
         //TODO

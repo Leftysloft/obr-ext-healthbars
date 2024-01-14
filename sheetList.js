@@ -3,6 +3,8 @@ import { ID } from "./constants";
 import "./style.css";
 //import { isImage } from "@owlbear-rodeo/sdk";
 
+
+//TO BE DELETED
 // const characters = await OBR.scene.items.getItems(
 //   (item) => item.layer === "CHARACTER" && isImage(item)
 // );
@@ -44,9 +46,20 @@ export async function setupSheetList(element) {
       // console.log('role-vis:'+playerRole+"-"+urlItem.visible);
       if(playerRole == "GM" || urlItem.visible) {
         const node = document.createElement("ul");
+        node.setAttribute("height", 75);
         node.innerText = `${urlItem.name}`;
         if(playerRole == "GM") {
           
+
+           //  Display a character in an iframe (works?)
+          const fnode = document.createElement("embed");
+            fnode.setAttribute("width", 75);
+            fnode.setAttribute("height", 75);
+            fnode.setAttribute("src", "https://lefty469.pythonanywhere.com/portrait?name=raine&id=" + (urlItem.character_id));
+
+            node.appendChild(fnode);
+          // Stop trying (works?)
+
           // Sets Character URL page and creates pen-to-square image
           const enode = document.createElement("img");
            enode.setAttribute("src", "fa-pen-to-square.svg");
@@ -59,15 +72,6 @@ export async function setupSheetList(element) {
              }
            });
            node.appendChild(enode);
-
-           //  Display a character in an iframe (works?)
-            const fnode = document.createElement("embed");
-            fnode.setAttribute("width", 125);
-            fnode.setAttribute("height", 125);
-            fnode.setAttribute("src", "https://lefty469.pythonanywhere.com/portrait?name=raine&id=" + (urlItem.character_id));
-
-            node.appendChild(fnode);
-          // Stop trying (works?)
 
            // Creates checkbox for player visibility
           const cnode = document.createElement("input");

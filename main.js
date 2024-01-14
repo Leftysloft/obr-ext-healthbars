@@ -4,6 +4,8 @@ import { setupContextMenu } from "./contextMenu";
 import { setupSheetList, sheetFunction } from "./sheetList";
 import { isImage } from "@owlbear-rodeo/sdk";
 
+
+//TO BE DELETED
 // const characters = await OBR.scene.items.getItems(
 //   (item) => item.layer === "CHARACTER" && isImage(item)
 // );
@@ -17,7 +19,7 @@ document.querySelector("#app").innerHTML = `
 `;
 
 
-
+//TO BE DELETED
 //This gets characters without clicking add to sheet.  TO BE DELETED!
 // document.querySelector("#app").innerHTML = `
 

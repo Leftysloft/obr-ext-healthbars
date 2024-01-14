@@ -24,9 +24,11 @@ a:hover {
 }
 
 body {
-  margin: 100;
+  margin: 10;
   display: flex;
   place-items: left;
+  text-align: center;
+  flex-wrap: wrap;
   flex-direction: row-reverse;
   
 }
@@ -38,8 +40,8 @@ h1 {
 
 #app {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 1px;
+  margin:auto;
+  padding-top: 1px;
   text-align: center;
   padding-inline-start: 0px;
 }

@@ -3,7 +3,7 @@ import { ID } from "./constants";
 //import request from fetch;
 
 
-var url_test = "";
+var new_id = "";
 
 export async function setupContextMenu() {
   if(await OBR.player.getRole() != "GM") {
@@ -38,13 +38,11 @@ export async function setupContextMenu() {
       );
       //console.log(context.items);  //LOG GETS TOKEN DATA WHEN ADDED/REMOVED
       if (addToURLS) {
-        const character_id = window.prompt("Enter the character id from DnDBeyond");
-        if (character_id >= 0 + !null)
+        console.log("hellothere");
+        const character_id = window.prompt("Enter ONLY the character <id> number from DnDBeyond", new_id);
+          if (character_id >= 0 + !null)
+        new_id = character_id;
 
-        //TODO
-        //test to see if character url is valid
-        
-        //TODO
         
           OBR.scene.items.updateItems(context.items, (items) => {
             // console.log(character_id);

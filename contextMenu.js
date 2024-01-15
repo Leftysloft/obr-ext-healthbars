@@ -41,7 +41,7 @@ export async function setupContextMenu() {
         console.log("hellothere");
         const character_id = window.prompt("Enter ONLY the character <id> number from DnDBeyond", new_id);
           if (character_id >= 0 + !null)
-        new_id = character_id;
+          //new_id = character_id;
 
         
           OBR.scene.items.updateItems(context.items, (items) => {

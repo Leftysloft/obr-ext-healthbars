@@ -46,7 +46,7 @@ export async function setupSheetList(element) {
           const fnode = document.createElement("embed");
             fnode.setAttribute("width", 75);
             fnode.setAttribute("height", 75);
-            fnode.setAttribute("src", "https://lefty469.pythonanywhere.com/character_server?id=id=" + (urlItem.character_id));
+            fnode.setAttribute("src", "https://lefty469.pythonanywhere.com/character_server?id=" + (urlItem.character_id));
 
             node.appendChild(fnode);
           // Stop trying (works?)

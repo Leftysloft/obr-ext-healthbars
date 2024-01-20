@@ -16,7 +16,7 @@ export async function setupContextMenu() {
     icons: [
       {
         icon: "/fa-circle-check.svg",
-        label: "Add Sheet",
+        label: "Add To Character Sheet",
         filter: {
           every: [
             { key: "layer", value: "CHARACTER" },
@@ -26,7 +26,7 @@ export async function setupContextMenu() {
       },
       {
         icon: "/fa-circle-xmark.svg",
-        label: "Remove Sheet",
+        label: "Remove From Character Sheet",
         filter: {
           every: [{ key: "layer", value: "CHARACTER" }],
         },
@@ -36,22 +36,24 @@ export async function setupContextMenu() {
       const addToURLS = context.items.every(
         (item) => item.metadata[`${ID}/metadata`] === undefined
       );
-      //console.log(context.items);  //LOG GETS TOKEN DATA WHEN ADDED/REMOVED
+      console.log(context);  //LOG GETS TOKEN DATA WHEN ADDED/REMOVED
       if (addToURLS) {
-        console.log("hellothere");
-        const character_id = window.prompt("Enter ONLY the character <id> number from DnDBeyond", new_id);
+        // console.log(item);
+        const character_id = window.prompt("Enter ONLY the character <id> number from DnDBeyond");
           if (character_id >= 0 + !null)
           //new_id = character_id;
 
         
           OBR.scene.items.updateItems(context.items, (items) => {
-            // console.log(character_id);
+            //  console.log(character_id);
             for (let item of items) {
               item.metadata[`${ID}/metadata`] = {
                 "character_id": character_id,
                 "url": "",
                 "visible": false,
+                
               };
+              // console.log (character_id, ['${ID}/metadata'], item.metadata)
             }
           });
         } else {

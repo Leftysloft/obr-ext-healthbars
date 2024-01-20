@@ -1,4 +1,6 @@
 :root {
+  display:flex;
+  flex-direction: row-reverse;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1;
   font-weight: 100;
@@ -24,13 +26,19 @@ a:hover {
 }
 
 body {
-  margin: 10;
   display: flex;
-  place-items: left;
   text-align: center;
+  flex-direction: row;
   flex-wrap: wrap;
-  flex-direction: row-reverse;
-  
+}
+
+ul ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  padding-inline-start: unset;
 }
 
 h1 {
@@ -39,7 +47,8 @@ h1 {
 }
 
 #app {
-  max-width: 1280px;
+  display: flex;
+  max-width: 400px;
   margin:auto;
   padding-top: 1px;
   text-align: center;

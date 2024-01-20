@@ -58,6 +58,31 @@ export async function setupSheetList(element) {
         
         if(playerRole == "GM") {
           
+<<<<<<< HEAD
+=======
+           //  Display a character in an iframe (works?)
+          const fnode = document.createElement("embed");
+            fnode.setAttribute("width", 75);
+            fnode.setAttribute("height", 75);
+            fnode.setAttribute("src", "https://lefty469.pythonanywhere.com/character_server?id=" + (urlItem.character_id));
+
+            node.appendChild(fnode);
+          // Stop trying (works?)
+
+          // Sets Character URL page and creates pen-to-square image
+          const enode = document.createElement("img");
+           enode.setAttribute("src", "fa-pen-to-square.svg");
+           enode.setAttribute("width", 20);
+           enode.setAttribute("height", 20);
+           enode.addEventListener("click", function() {
+             const url = window.prompt("Enter the sheet url", urlItem.url);
+             if(url) {
+               editSheetFunction(`${urlItem.id}`, url);
+             }
+           });
+           node.appendChild(enode);
+
+>>>>>>> 85146d9be937c358f8c1310b2e9a4f3e4544bfb9
            // Creates checkbox for player visibility
           const cnode = document.createElement("input");
           cnode.id = urlItem.id;

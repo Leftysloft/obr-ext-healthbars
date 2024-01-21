@@ -42,10 +42,14 @@ export async function setupSheetList(element) {
         node.innerText =`${urlItem.name}`;
         // console.log(urlItem.id)
 
+
+
+        
+
         const enode = document.createElement("img");
         enode.setAttribute("src", "fa-pen-to-square.svg");
         enode.setAttribute("title", "Click here to set your notes page (URL)");
-        enode.setAttribute("width", 20);
+        enode.setAttribute("width", 30);
         enode.setAttribute("height", 20);
         enode.addEventListener("click", function() {
           const url = window.prompt("Paste the link to your notebook here, then click the arrow next to your image", urlItem.url);

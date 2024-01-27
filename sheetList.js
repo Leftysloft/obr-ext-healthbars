@@ -118,15 +118,15 @@ export async function visibileFunction(uuid) {
     }
   });
 }
-//* Opens the Gsheet url
+//opens character's notebook
 export function sheetFunction(url) {
-  console.log(url);
-  OBR.popover.open({
-    id: "${ID}/healthbars",
-    url: url,
-    height: 800,
-    width: 610,
-  });
+  if (url != "undefined"){
+  const windowFeatures = "left=100,top=100,width=600,height=800";
+  window.open(`${url}`, "mozillaWindow", windowFeatures);
+  }
+  else {
+    window.confirm("YOU MUST FIRST SET THE URL!!!\nPlease click on the notepad icon to set your page URL");
+  }
 }
 // Edit sheet url
 export async function editSheetFunction(uuid, url) {

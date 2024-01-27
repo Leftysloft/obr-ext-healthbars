@@ -1,5 +1,6 @@
 :root {
   display:flex;
+  justify-content: left;
   flex-direction: row-reverse;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1;
@@ -16,7 +17,14 @@
   -webkit-text-size-adjust: 100%;
 }
 
+:character-portrait{
+  display: flex;
+  justify-content: left;
+}
+
 a {
+  display: flex;
+  justify-content: left;
   font-weight: 100;
   color: #ffffff;
   text-decoration: inherit;
@@ -26,24 +34,29 @@ a:hover {
 }
 
 body {
+  overflow: hidden;;
+
+  position: absolute;
   display: flex;
+  justify-content: left;
   text-align: center;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-ul ul {
+ul {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
   align-items: center;
-  padding-inline-start: unset;
-  padding: 2px;
-  justify-content: space-evenly;
-  border-style: solid;
-  border-color: aqua;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  font-weight: 600;
+  border: solid;
   border-width: thin;
+  border-color: blue;
+  padding: 4px;
+  margin-top: 3px;
+  margin-right: 0px;
 }
 
 h1 {
@@ -51,13 +64,17 @@ h1 {
   line-height: 1.1;
 }
 
+h3{
+  margin: 1px;
+}
+
 #app {
   display: flex;
-  max-width: 400px;
-  margin:auto;
+  max-width: 125px;
+ 
+  justify-content:left;
   padding-top: 1px;
   text-align: center;
-  padding-inline-start: 0px;
 }
 
 .logo {
@@ -81,9 +98,15 @@ h1 {
   color: #ffffff;
 }
 
+.character{
+  display: flex;
+}
+
 button {
+  position: relative;
+
   border-radius: 20px;
-  border: 1px solid transparent;
+  border: 1px solid #d91f1f;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -91,6 +114,7 @@ button {
   background-color: #ffffff;
   cursor: pointer;
   transition: border-color 0.25s;
+
 }
 button:hover {
   border-color: #ffffff;
@@ -102,6 +126,10 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
+
+
+    display: flex;
+    justify-content: left;
     color: #ffffff;
     background-color: #000000;
   }
@@ -109,6 +137,8 @@ button:focus-visible {
     color: #ffffff;
   }
   button {
+    position: absolute;
+
     background-color: #f9f9f9;
   }
 }

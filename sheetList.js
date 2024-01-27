@@ -86,6 +86,7 @@ export async function setupSheetList(element) {
             sheetFunction(`${urlItem.url}`);
           });
 
+          node.appendChild(inode);
 
           //  Display a character in an iframe (works?)
           const fnode = document.createElement("embed");
@@ -96,7 +97,6 @@ export async function setupSheetList(element) {
           // Stop trying (works?)
 
 
-          node.appendChild(inode);
           nodes.push(node);
       }
     }

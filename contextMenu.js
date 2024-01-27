@@ -1,5 +1,9 @@
 import OBR from "@owlbear-rodeo/sdk";
 import { ID } from "./constants";
+//import request from fetch;
+
+
+var new_id = "";
 
 export async function setupContextMenu() {
   if(await OBR.player.getRole() != "GM") {
@@ -30,22 +34,26 @@ export async function setupContextMenu() {
     ],
     onClick(context) {
       const addToURLS = context.items.every(
-        (item) => item.metadata[`${ID}/metadata`] === undefined,
+        (item) => item.metadata[`${ID}/metadata`] === undefined
       );
+      console.log(context);  //LOG GETS TOKEN DATA WHEN ADDED/REMOVED
       if (addToURLS) {
-        // imageUrl gets the URL of the image from account storage
-        const imageUrl = context.items[0].image.url;
+        // console.log(item);
         const character_id = window.prompt("Enter ONLY the character <id> number from DnDBeyond");
           if (character_id >= 0 + !null)
+          //new_id = character_id;
+
         
           OBR.scene.items.updateItems(context.items, (items) => {
+            //  console.log(character_id);
             for (let item of items) {
               item.metadata[`${ID}/metadata`] = {
                 "character_id": character_id,
-                // "url" passes imageUrl to sheetlist.js
-                "imageUrl": imageUrl,
-                "visible": false
+                "url": "",
+                "visible": false,
+                
               };
+              // console.log (character_id, ['${ID}/metadata'], item.metadata)
             }
           });
         } else {

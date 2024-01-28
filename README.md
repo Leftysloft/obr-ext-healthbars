@@ -15,9 +15,10 @@ To use this app extension, the character sheet on DnDBeyond ***MUST*** be set to
 ![4](/screenshots/enable-player-view.png)
 
 5. The healthbar directly under the character image will move dynamically when health is affected on DnDBeyond
-![5](https://github.com/Leftysloft/obr-ext-healthbars/assets/5694639/1c672602-21f5-45d8-9ae6-8024504a9485)
+![5](https://github.com/Leftysloft/obr-ext-healthbar/assets/5694639/1c672602-21f5-45d8-9ae6-8024504a9485.mov)
 
-
+6. To add/edit you notebook url, click on the pen-n-square icon
+![6](screenshots/edit-notebook-page.png)
 
 7. To add/edit you notebook url, click on the pen-n-square icon
 ![6](screenshots/edit-notebook-page.png)

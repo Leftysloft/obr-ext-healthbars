@@ -104,10 +104,10 @@ h3{
 
 button {
   position: relative;
-
+  text-wrap: nowrap;
   border-radius: 20px;
   border: 1px solid #d91f1f;
-  padding: 0.6em 1.2em;
+  padding: 0.1em 2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;

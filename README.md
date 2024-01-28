@@ -1,9 +1,9 @@
-# obr-ext-gsheet
-Extension for Owlbear Rodeo 2 to link Google Sheets to tokens and manage them.
+# obr-ext-healthbars
+Extension for Owlbear Rodeo 2 to add a character interaction sheet.
 
 ![1](/screenshots/list.png)
 
-1. Show list of tokens associated with Google sheets
+1. Show list of character images directly from DnDBeyond
 2. Edit the url of the Google sheet of the token - copy and paste your "share" url
 3. Open the Google sheet of the token
 4. Allow the player to see this token's Google sheet - when added they are not visible to players by default

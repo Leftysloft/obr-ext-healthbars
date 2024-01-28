@@ -38,13 +38,8 @@ export async function setupSheetList(element) {
       // console.log('role-vis:'+playerRole+"-"+urlItem.visible);
       if(playerRole == "GM" || urlItem.visible) {
         const node = document.createElement("ul");
-        node.setAttribute("height", 75);
         node.innerText =`${urlItem.name}`;
         // console.log(urlItem.id)
-
-
-
-        
 
         const enode = document.createElement("img");
         enode.setAttribute("src", "fa-pen-to-square.svg");
@@ -95,8 +90,6 @@ export async function setupSheetList(element) {
           fnode.setAttribute("src", "https://lefty469.pythonanywhere.com/character_server?id=" + (urlItem.character_id));
           node.appendChild(fnode);
           // Stop trying (works?)
-
-
           nodes.push(node);
       }
     }
@@ -107,12 +100,9 @@ export async function setupSheetList(element) {
 // Set link (circle right) visible to players
 export async function visibileFunction(uuid) {
   const vis = document.getElementById(uuid).checked;
-  console.log('vis:'+vis);
   OBR.scene.items.updateItems(await OBR.scene.items.getItems([uuid]), (items) => {
     for (let item of items) {
-      console.log('itemid:'+item.id);
       let meta = item.metadata[`${ID}/metadata`];
-      console.log('meta vis:'+meta.visible);
       meta.visible = vis;
       item.metadata[`${ID}/metadata`] = meta;
     }
@@ -120,7 +110,8 @@ export async function visibileFunction(uuid) {
 }
 //opens character's notebook
 export function sheetFunction(url) {
-  if (url != "undefined"){
+  if (url != ""){
+    console.log("sheetfunction", url)
   const windowFeatures = "left=100,top=100,width=600,height=800";
   window.open(`${url}`, "mozillaWindow", windowFeatures);
   }

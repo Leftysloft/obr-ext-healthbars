@@ -27,3 +27,9 @@ https://github.com/Leftysloft/obr-ext-healthbars/assets/5694639/919fa4b0-5441-41
 
 8. Clicking on the character image will open a window to the DnDBeyond character page.  The character owner and the DM can interact as normal.
 ![8](/screenshots/view-dndb-character.png)
+
+9. You can drag the app around the map window.
+
+https://github.com/Leftysloft/obr-ext-healthbars/assets/5694639/d9c20dda-cd11-48d7-916b-d77e278bbc47
+
+

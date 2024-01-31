@@ -43,6 +43,13 @@ export async function setupSheetList(element) {
 
         const anode = document.createElement("character-portrait");
 
+        //  Display a character in an iframe (works?)
+        const fnode = document.createElement("embed");
+        fnode.setAttribute("width", 75);
+        fnode.setAttribute("height", 75);
+        fnode.setAttribute("src", "https://lefty469.pythonanywhere.com/character_server?id=" + (urlItem.character_id));
+        anode.appendChild(fnode);
+
         const enode = document.createElement("img");
         enode.setAttribute("src", "fa-pen-to-square.svg");
         enode.setAttribute("title", "Click here to set your notes page (URL)");
@@ -82,24 +89,30 @@ export async function setupSheetList(element) {
           inode.addEventListener("click", function() {
             sheetFunction(`${urlItem.url}`);
           });
-
           anode.appendChild(inode);
 
-          //  Display a character in an iframe (works?)
-          const fnode = document.createElement("embed");
-          fnode.setAttribute("width", 75);
-          fnode.setAttribute("height", 75);
-          fnode.setAttribute("src", "https://lefty469.pythonanywhere.com/character_server?id=" + (urlItem.character_id));
-          anode.appendChild(fnode);
-          // Stop trying (works?)
+
+//TODO
+//CREATE NEW SUBNODE
+
+          // //  Display a character in an iframe (works?)
+          // const fnode = document.createElement("embed");
+          // fnode.setAttribute("width", 75);
+          // fnode.setAttribute("height", 75);
+          // fnode.setAttribute("src", "https://lefty469.pythonanywhere.com/character_server?id=" + (urlItem.character_id));
+          // anode.appendChild(fnode);
+          
+
           node.appendChild(anode);
           nodes.push(node);
       }
     }
+
     element.replaceChildren(...nodes);
   };
   OBR.scene.items.onChange(renderList);
 }
+
 // Set link (circle right) visible to players
 export async function visibileFunction(uuid) {
   const vis = document.getElementById(uuid).checked;
@@ -111,6 +124,7 @@ export async function visibileFunction(uuid) {
     }
   });
 }
+
 //opens character's notebook
 export function sheetFunction(url) {
   if (url != ""){

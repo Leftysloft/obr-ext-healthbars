@@ -41,18 +41,20 @@ export async function setupSheetList(element) {
         node.innerText =`${urlItem.name}`;
         // console.log(urlItem.id)
 
+        const anode = document.createElement("character-portrait");
+
         const enode = document.createElement("img");
         enode.setAttribute("src", "fa-pen-to-square.svg");
         enode.setAttribute("title", "Click here to set your notes page (URL)");
-        enode.setAttribute("width", 30);
-        enode.setAttribute("height", 20);
+        enode.setAttribute("width", 20);
+        enode.setAttribute("height", 30);
         enode.addEventListener("click", function() {
           const url = window.prompt("Paste the link to your notebook here, then click the arrow next to your image", urlItem.url);
           if(url) {
             editSheetFunction(`${urlItem.id}`, url);
           }
         });
-        node.appendChild(enode);
+        anode.appendChild(enode);
 
         
         if(playerRole == "GM") {
@@ -68,7 +70,7 @@ export async function setupSheetList(element) {
           cnode.addEventListener("change", function() {
             visibileFunction(urlItem.id);
           });
-          node.appendChild(cnode);
+          anode.appendChild(cnode);
         }
 
           // Creates image for link to url page
@@ -76,20 +78,21 @@ export async function setupSheetList(element) {
           inode.setAttribute("src", "fa-circle-right.svg");
           inode.setAttribute("title", "View your notes page");
           inode.setAttribute("width", 20);
-          inode.setAttribute("height", 20);
+          inode.setAttribute("height", 30);
           inode.addEventListener("click", function() {
             sheetFunction(`${urlItem.url}`);
           });
 
-          node.appendChild(inode);
+          anode.appendChild(inode);
 
           //  Display a character in an iframe (works?)
           const fnode = document.createElement("embed");
           fnode.setAttribute("width", 75);
           fnode.setAttribute("height", 75);
           fnode.setAttribute("src", "https://lefty469.pythonanywhere.com/character_server?id=" + (urlItem.character_id));
-          node.appendChild(fnode);
+          anode.appendChild(fnode);
           // Stop trying (works?)
+          node.appendChild(anode);
           nodes.push(node);
       }
     }

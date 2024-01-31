@@ -17,9 +17,15 @@
   -webkit-text-size-adjust: 100%;
 }
 
-:character-portrait{
+character-portrait{
   display: flex;
   justify-content: left;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+img{
+  position: relative;
 }
 
 a {
@@ -50,13 +56,14 @@ ul {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  font-weight: 600;
+  font-weight: 400;
   border: solid;
   border-width: thin;
   border-color: blue;
   padding: 4px;
   margin-top: 3px;
   margin-right: 0px;
+  font-size: x-large;
 }
 
 h1 {

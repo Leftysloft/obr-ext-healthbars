@@ -50,6 +50,9 @@ export async function setupSheetList(element) {
         fnode.setAttribute("src", "https://lefty469.pythonanywhere.com/character_server?id=" + (urlItem.character_id));
         anode.appendChild(fnode);
 
+        //TODO TRY TO CREAT A SUBNODE FOR ICONS
+        const bnode = document.createElement("icon");
+
         const enode = document.createElement("img");
         enode.setAttribute("src", "fa-pen-to-square.svg");
         enode.setAttribute("title", "Click here to set your notes page (URL)");
@@ -61,7 +64,7 @@ export async function setupSheetList(element) {
             editSheetFunction(`${urlItem.id}`, url);
           }
         });
-        anode.appendChild(enode);
+        bnode.appendChild(enode);
 
         
         if(playerRole == "GM") {
@@ -77,7 +80,7 @@ export async function setupSheetList(element) {
           cnode.addEventListener("change", function() {
             visibileFunction(urlItem.id);
           });
-          anode.appendChild(cnode);
+          bnode.appendChild(cnode);
         }
 
           // Creates image for link to url page
@@ -89,19 +92,9 @@ export async function setupSheetList(element) {
           inode.addEventListener("click", function() {
             sheetFunction(`${urlItem.url}`);
           });
-          anode.appendChild(inode);
-
-
-//TODO
-//CREATE NEW SUBNODE
-
-          // //  Display a character in an iframe (works?)
-          // const fnode = document.createElement("embed");
-          // fnode.setAttribute("width", 75);
-          // fnode.setAttribute("height", 75);
-          // fnode.setAttribute("src", "https://lefty469.pythonanywhere.com/character_server?id=" + (urlItem.character_id));
-          // anode.appendChild(fnode);
+          bnode.appendChild(inode);
           
+          anode.appendChild(bnode);
 
           node.appendChild(anode);
           nodes.push(node);

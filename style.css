@@ -22,6 +22,7 @@ character-portrait{
   justify-content: left;
   flex-direction: row-reverse;
   align-items: center;
+  padding-top: 4px;
 }
 
 img{
@@ -56,14 +57,14 @@ ul {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  font-weight: 400;
+  font-weight: normal;
   border: solid;
   border-width: thin;
   border-color: blue;
   padding: 4px;
   margin-top: 3px;
   margin-right: 0px;
-  font-size: x-large;
+  font-size: large;
 }
 
 h1 {

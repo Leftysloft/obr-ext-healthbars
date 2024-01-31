@@ -38,7 +38,7 @@ export async function setupSheetList(element) {
       // console.log('role-vis:'+playerRole+"-"+urlItem.visible);
       if(playerRole == "GM" || urlItem.visible) {
         const node = document.createElement("ul");
-        node.innerText =`${urlItem.name}`;
+        node.textContent =`${urlItem.name}`;
         // console.log(urlItem.id)
 
         const anode = document.createElement("character-portrait");

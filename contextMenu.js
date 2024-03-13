@@ -2,7 +2,7 @@ import OBR from "@owlbear-rodeo/sdk";
 import { ID } from "./constants";
 
 export async function setupContextMenu() {
-  if(await OBR.player.getRole() != "GM") {
+  if ((await OBR.player.getRole()) != "GM") {
     return;
   }
 
@@ -34,29 +34,28 @@ export async function setupContextMenu() {
       );
       if (addToURLS) {
         // console.log(item);
-        const character_id = window.prompt("Enter ONLY the character <id> number from DnDBeyond");
-          if (character_id >= 0 + !null)
-        
+        const character_id = window.prompt(
+          "Enter ONLY the character <id> number from DnDBeyond"
+        );
+        if (character_id >= 0 + !null)
           OBR.scene.items.updateItems(context.items, (items) => {
             //  console.log(character_id);
             for (let item of items) {
               item.metadata[`${ID}/metadata`] = {
-                "character_id": character_id,
-                "url": "",
-                "visible": false,
-                
+                character_id: character_id,
+                url: "",
+                visible: false,
               };
               // console.log (character_id, ['${ID}/metadata'], item.metadata)
             }
           });
-        } else {
-          OBR.scene.items.updateItems(context.items, (items) => {
-            for (let item of items) {
-              delete item.metadata[`${ID}/metadata`]
-            }
-          });
-        }
-      },
-    });
-  }
-
+      } else {
+        OBR.scene.items.updateItems(context.items, (items) => {
+          for (let item of items) {
+            delete item.metadata[`${ID}/metadata`];
+          }
+        });
+      }
+    },
+  });
+}

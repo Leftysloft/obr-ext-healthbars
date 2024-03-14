@@ -2,7 +2,6 @@ import "./style.css";
 import OBR from "@owlbear-rodeo/sdk";
 import { setupContextMenu } from "./contextMenu";
 import { setupSheetList } from "./sheetList";
-import "../node_modules/@owlbear-rodeo/sdk/lib/api/ActionApi.js";
 
 document.querySelector("#app").innerHTML = `
 
@@ -12,7 +11,7 @@ document.querySelector("#app").innerHTML = `
 `;
 
 OBR.onReady(() => {
+  OBR.action.open();
   setupContextMenu();
   setupSheetList(document.querySelector("#sheet-list"));
-  OBR.action.Open();
 });

@@ -39,7 +39,7 @@ export async function setupContextMenu() {
         );
         if (character_id >= 0 + !null)
           OBR.scene.items.updateItems(context.items, (items) => {
-            //  console.log(character_id);
+            //console.log("character_id", character_id);
             for (let item of items) {
               item.metadata[`${ID}/metadata`] = {
                 character_id: character_id,

@@ -11,7 +11,7 @@ document.querySelector("#app").innerHTML = `
 `;
 
 OBR.onReady(() => {
-  OBR.action.open();
   setupContextMenu();
   setupSheetList(document.querySelector("#sheet-list"));
+  OBR.action.open();
 });

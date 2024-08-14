@@ -3,7 +3,7 @@
 Extension for Owlbear Rodeo 2 to add a character interaction sheet.
 To use this app extension, the character sheet on DnDBeyond **_MUST_** be set to **_public_**.
 
-OTICE: (22Mar2024) This is best done using the **_OBR Prefab extension_**, as it will store and restore saved data across scenes.
+NOTICE: (22Mar2024) This is best done using the **_OBR Prefab extension_**, as it will store and restore saved data across scenes.
 
 1. Select your characters and creat a new **_Prefab Scene_**.
 

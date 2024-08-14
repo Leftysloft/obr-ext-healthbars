@@ -14,7 +14,7 @@ export async function setupSheetList(element) {
         sheetItems.push({
           url: metadata.url,
           character_id: metadata.character_id,
-          name: item.name,
+          name: item.text.plainText,
           visible: metadata.visible,
           id: item.id,
         });

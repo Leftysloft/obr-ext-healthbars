@@ -35,7 +35,7 @@ export async function setupContextMenu() {
       if (addToURLS) {
         // console.log(item);
         const character_id = window.prompt(
-          "Enter ONLY the character <id> number from DnDBeyond"
+          "Enter ONLY the character <id> number from DnDBeyond. NOTE: This requires DnDB character to have an image, or it won't work."
         );
         if (character_id >= 0 + !null)
           OBR.scene.items.updateItems(context.items, (items) => {

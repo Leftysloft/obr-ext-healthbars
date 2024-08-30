@@ -3,13 +3,12 @@ import { ID } from "./constants";
 import "./style.css";
 
 let cachedItems = [];
-console.log("cached", cachedItems);
+
 export async function setupSheetList(element) {
   const renderList = async (items) => {
     // Get the url of any item with
     // our gsheet metadata
     const sheetItems = [];
-    console.log("sheetItems", sheetItems);
 
     for (const item of items) {
       const metadata = item.metadata[`${ID}/metadata`];
@@ -38,14 +37,6 @@ export async function setupSheetList(element) {
         }
       } else {
         changedItems.push(item);
-      }
-    });
-    // we need to remove all nodes that are no longer in the sortedItems Array
-    const ids = sortedItems.map((s) => s.id);
-    cachedItems.forEach((cachedItem) => {
-      if (!ids.includes(cachedItem.id)) {
-        const node = document.querySelector(`[data-id="${cachedItem.id}"]`);
-        node.remove();
       }
     });
     cachedItems = sortedItems;
@@ -89,29 +80,29 @@ export async function setupSheetList(element) {
           const anode = document.createElement("character-portrait");
 
           //  Display a character in an iframe (works?)
-          const fnode = document.createElement("embed");
-          fnode.classList.add("embed-view");
-          fnode.setAttribute("width", 75);
-          fnode.setAttribute("height", 75);
-          fnode.setAttribute(
+          const characterNode = document.createElement("embed");
+          characterNode.classList.add("embed-view");
+          characterNode.setAttribute("width", 75);
+          characterNode.setAttribute("height", 75);
+          characterNode.setAttribute(
             "src",
             "https://lefty469.pythonanywhere.com/character_server?id=" +
               urlItem.character_id
           );
-          anode.appendChild(fnode);
+          anode.appendChild(characterNode);
 
           //TODO TRY TO CREAT A SUBNODE FOR ICONS
-          const bnode = document.createElement("icon");
+          const displayIconsNode = document.createElement("icon");
 
-          const enode = document.createElement("img");
-          enode.setAttribute("src", "fa-pen-to-square.svg");
-          enode.setAttribute(
+          const editNotesNode = document.createElement("img");
+          editNotesNode.setAttribute("src", "fa-pen-to-square.svg");
+          editNotesNode.setAttribute(
             "title",
             "Click here to set your notes page (URL)"
           );
-          enode.setAttribute("width", 20);
-          enode.setAttribute("height", 30);
-          enode.addEventListener("click", function () {
+          editNotesNode.setAttribute("width", 20);
+          editNotesNode.setAttribute("height", 30);
+          editNotesNode.addEventListener("click", function () {
             const url = window.prompt(
               "Paste the link to your notebook here, then click the arrow next to your image",
               urlItem.url
@@ -120,36 +111,36 @@ export async function setupSheetList(element) {
               editSheetFunction(`${urlItem.id}`, url);
             }
           });
-          bnode.appendChild(enode);
+          displayIconsNode.appendChild(editNotesNode);
 
           if (playerRole == "GM") {
             // Creates checkbox for player visibility
-            const cnode = document.createElement("input");
-            cnode.id = urlItem.id;
-            cnode.setAttribute("type", "checkbox");
-            cnode.setAttribute("title", "Enable Player View");
+            const visibleNode = document.createElement("input");
+            visibleNode.id = urlItem.id;
+            visibleNode.setAttribute("type", "checkbox");
+            visibleNode.setAttribute("title", "Enable Player View");
             if (urlItem.visible) {
-              cnode.setAttribute("checked", true);
+              visibleNode.setAttribute("checked", true);
             }
-            cnode.addEventListener("change", function () {
+            visibleNode.addEventListener("change", function () {
               visibileFunction(urlItem.id);
             });
-            bnode.appendChild(cnode);
+            displayIconsNode.appendChild(visibleNode);
           }
 
           // Creates image for link to url page
-          const inode = document.createElement("img");
-          inode.setAttribute("src", "fa-circle-right.svg");
-          inode.classList.add("sheet-url");
-          inode.setAttribute("title", "View your notes page");
-          inode.setAttribute("width", 20);
-          inode.setAttribute("height", 30);
-          inode.addEventListener("click", function () {
+          const viewNotesNode = document.createElement("img");
+          viewNotesNode.setAttribute("src", "fa-circle-right.svg");
+          viewNotesNode.classList.add("sheet-url");
+          viewNotesNode.setAttribute("title", "View your notes page");
+          viewNotesNode.setAttribute("width", 20);
+          viewNotesNode.setAttribute("height", 30);
+          viewNotesNode.addEventListener("click", function () {
             sheetFunction(`${urlItem.url}`);
           });
-          bnode.appendChild(inode);
+          displayIconsNode.appendChild(viewNotesNode);
 
-          anode.appendChild(bnode);
+          anode.appendChild(displayIconsNode);
 
           newNode.appendChild(anode);
 

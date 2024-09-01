@@ -20,7 +20,7 @@ OBR.onReady(() => {
     console.log("popoverBtn");
     OBR.popover.open({
       id: ID,
-      url: "obr-ext-healthbars/settings/settings.html",
+      url: "/settings/settings.html",
       height: 400,
       width: 400,
     });

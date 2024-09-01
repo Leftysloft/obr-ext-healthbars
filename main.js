@@ -20,7 +20,7 @@ OBR.onReady(() => {
     console.log("popoverBtn");
     OBR.popover.open({
       id: ID,
-      url: "https://github.com/Leftysloft/obr-ext-healthbars/tree/main#readme",
+      url: "/settings/settings.html",
       height: 400,
       width: 400,
     });

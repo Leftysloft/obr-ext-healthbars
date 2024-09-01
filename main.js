@@ -17,19 +17,19 @@ OBR.onReady(() => {
 
   console.log(OBR.scene.onReadyChange(), "onChange");
 
-  //Open popover menu
-  const popoverBtn = document.getElementById("popoverButton");
-  popoverBtn.onclick = () => {
-    console.log("popoverBtn");
-    // settings();
-    OBR.popover.open({
-      id: ID,
-      url: "/settings/settings.html",
-      height: 400,
-      width: 400,
-    });
-    console.log("settings");
-  };
+  // //Open popover menu
+  // const popoverBtn = document.getElementById("popoverButton");
+  // popoverBtn.onclick = () => {
+  //   console.log("popoverBtn");
+  //   // settings();
+  //   OBR.popover.open({
+  //     id: ID,
+  //     url: "/settings/settings.html",
+  //     height: 400,
+  //     width: 400,
+  //   });
+  //   console.log("settings");
+  // };
 
   setupSheetList(document.querySelector("#sheet-list"));
   OBR.action.open();

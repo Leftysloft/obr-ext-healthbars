@@ -30,7 +30,7 @@ OBR.onReady(() => {
     console.log("popoverBtn");
     OBR.popover.open({
       id: ID,
-      url: "/settings/settings.html",
+      url: "https://google.com",
       height: 400,
       width: 400,
     });

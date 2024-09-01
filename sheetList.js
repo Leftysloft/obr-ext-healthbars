@@ -39,14 +39,6 @@ export async function setupSheetList(element) {
         changedItems.push(item);
       }
     });
-    // we need to remove all nodes that are no longer in the sortedItems Array
-    const ids = sortedItems.map((s) => s.id);
-    cachedItems.forEach((cachedItem) => {
-      if (!ids.includes(cachedItem.id)) {
-        const node = document.querySelector(`[data-id="${cachedItem.id}"]`);
-        node.remove();
-      }
-    });
     cachedItems = sortedItems;
 
     // Create new list nodes for each url item

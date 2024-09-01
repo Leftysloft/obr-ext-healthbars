@@ -111,6 +111,7 @@ export async function setupSheetList(element) {
 // Set link (circle right) visible to players
 export async function visibileFunction(uuid) {
   const vis = document.getElementById(uuid).checked;
+  console.log("uuid", uuid);
   OBR.scene.items.updateItems(
     await OBR.scene.items.getItems([uuid]),
     (items) => {

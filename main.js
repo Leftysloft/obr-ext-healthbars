@@ -15,17 +15,17 @@ OBR.onReady(() => {
   setupContextMenu();
 
   //Open popover menu
-  const popoverBtn = document.getElementById("popoverButton");
-  popoverBtn.onclick = () => {
-    console.log("popoverBtn");
-    OBR.popover.open({
-      id: ID,
-      url: "/settings/settings.html",
-      height: 400,
-      width: 400,
-    });
-    console.log("settings");
-  };
+  // const popoverBtn = document.getElementById("popoverButton");
+  // popoverBtn.onclick = () => {
+  //   console.log("popoverBtn");
+  //   OBR.popover.open({
+  //     id: ID,
+  //     url: "/settings/settings.html",
+  //     height: 400,
+  //     width: 400,
+  //   });
+  //   console.log("settings");
+  // };
 
   //Set up the view
   setupSheetList(document.querySelector("#sheet-list"));

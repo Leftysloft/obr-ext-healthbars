@@ -4,13 +4,12 @@ import { setupContextMenu } from "./contextMenu";
 import { setupSheetList } from "./sheetList";
 import { ID } from "./constants";
 
-document.querySelector("#app").innerHTML = `
+OBR.onReady(() => {
+  document.querySelector("#app").innerHTML = `
   <div>
     <ul id="sheet-list"></ul>
   </div>
 `;
-
-OBR.onReady(() => {
   setupContextMenu();
 
   setupSheetList(document.querySelector("#sheet-list"));

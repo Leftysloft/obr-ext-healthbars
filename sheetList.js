@@ -3,13 +3,11 @@ import { ID } from "./constants";
 import "./style.css";
 
 let cachedItems = [];
-console.log("cached", cachedItems);
 export async function setupSheetList(element) {
   const renderList = async (items) => {
     // Get the url of any item with
     // our gsheet metadata
     const sheetItems = [];
-    console.log("sheetItems", sheetItems);
 
     for (const item of items) {
       const metadata = item.metadata[`${ID}/metadata`];
@@ -66,7 +64,6 @@ export async function setupSheetList(element) {
 
         const embed = node.querySelector(".embed-view");
         if (embed) {
-          console.log(embed);
           embed.src =
             "https://lefty469.pythonanywhere.com/character_server?id=" +
             urlItem.character_id;
@@ -179,7 +176,6 @@ export async function visibileFunction(uuid) {
 //opens character's notebook
 export function sheetFunction(url) {
   if (url != "") {
-    console.log("sheetfunction", url);
     const windowFeatures = "left=100,top=100,width=600,height=800";
     window.open(`${url}`, "mozillaWindow", windowFeatures);
   } else {

@@ -5,7 +5,7 @@
   "author": "Tiberius",
   "description": "Popup that shows live healthbars from a DNDB character sheet.",
   "homepage_url": "https://github.com/Leftysloft/obr-ext-healthbars/blob/main/README.md",
-  "icons": "/sample.png",
+  "icon": "/sample.png",
   "action": {
     "title": "PC Character Healthbars",
     "icon": "/heart.svg",

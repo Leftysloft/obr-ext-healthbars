@@ -3,7 +3,10 @@
   "version": "1.1.0",
   "manifest_version": 2,
   "action": {
-    "title": "PC Character's",
+    "title": "PC Character Healthbars",
+    "homepage": "https://github.com/Leftysloft/obr-ext-healthbars/blob/main/README.md",
+    "author": "Tiberius",
+    "description": "Popup that shows live healthbars from a DNDB character sheet.",
     "icon": "/heart.svg",
     "popover": "/",
     "height": 2000,

@@ -88,7 +88,7 @@ export async function setupSheetList(element) {
           //  Display a character in an iframe (works?)
           const fnode = document.createElement("embed");
           fnode.classList.add("embed-view");
-          fnode.setAttribute("width", 75);
+          fnode.setAttribute("width", 160);
           fnode.setAttribute("height", 75);
           fnode.setAttribute(
             "src",
